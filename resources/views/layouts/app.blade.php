@@ -83,13 +83,22 @@
                                                      aria-expanded="false" v-pre> {{ Auth::user()->name }} <span
                                 class="caret"></span> </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"><a
-                                class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Logout') }} </a>
-                            <a class="dropdown-item" href="#">Information</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                  style="display: none;"> @csrf </form>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <ul>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Logout') }} </a>
+                                </li>
+                                <li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;"> @csrf </form>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Information</a>
+                                </li>
+                            </ul>
                         </div>
+
                     </li> @endguest
                 <li><a href="{{route('categories.list')}}">Blog</a></li>
                 <li><a href="about.html">About</a></li>
