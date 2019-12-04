@@ -24,5 +24,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('categories')->group(function (){
-    Route::get('/list','CategoryController@index')->name('categories.list');
+    Route::get('/list','CategoryController@getALL')->name('categories.list');
 });

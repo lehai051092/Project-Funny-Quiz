@@ -1,17 +1,21 @@
-
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Marble &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
-    <meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-    <meta name="author" content="FreeHTML5.co" />
+    <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co"/>
+    <meta name="keywords"
+          content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive"/>
+    <meta name="author" content="FreeHTML5.co"/>
 
     <!--
   //////////////////////////////////////////////////////
@@ -33,10 +37,10 @@
     <meta property="og:url" content=""/>
     <meta property="og:site_name" content=""/>
     <meta property="og:description" content=""/>
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:card" content="" />
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:image" content=""/>
+    <meta name="twitter:url" content=""/>
+    <meta name="twitter:card" content=""/>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="{{asset('storage/favicon.ico')}}">
@@ -71,14 +75,27 @@
         <nav id="fh5co-main-menu" role="navigation">
             <ul>
                 <li class="fh5co-active"><a href="">Home</a></li>
-                <li><a href="{{route('categories.list')}}">Blog</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        CateGory
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <ul>
+                            <li><a class="dropdown-item" href="#">Thể thao</a></li>
+                            <li><a class="dropdown-item" href="#">Giải trí</a></li>
+                        </ul>
+                    </div>
+                </li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
 
         <div class="fh5co-footer">
-            <p><small>&copy; 2016 Blend Free HTML5. All Rights Reserved.</span> <span>Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> </span> <span>Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></span></small></p>
+            <p><small>&copy; 2016 Blend Free HTML5. All Rights Reserved.</span> <span>Designed by <a
+                            href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> </span> <span>Demo Images: <a
+                            href="https://unsplash.com/" target="_blank">Unsplash</a></span></small></p>
             <ul>
                 <li><a href="#"><i class="icon-facebook2"></i></a></li>
                 <li><a href="#"><i class="icon-twitter2"></i></a></li>
@@ -100,8 +117,13 @@
                                 <div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
                                     <div class="slider-text-inner">
                                         <h1>Intuitive <strong></strong> is How Give We the User New Superpowers</h1>
-                                        <h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
-                                        <p><a class="btn btn-primary btn-demo popup-vimeo" href="https://vimeo.com/channels/staffpicks/93951774"> <i class="icon-monitor"></i> Live Preview</a> <a class="btn btn-primary btn-learn">Learn More<i class="icon-arrow-right3"></i></a></p>
+                                        <h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a>
+                                        </h2>
+                                        <p><a class="btn btn-primary btn-demo popup-vimeo"
+                                              href="https://vimeo.com/channels/staffpicks/93951774"> <i
+                                                    class="icon-monitor"></i> Live Preview</a> <a
+                                                class="btn btn-primary btn-learn">Learn More<i
+                                                    class="icon-arrow-right3"></i></a></p>
                                     </div>
                                 </div>
                             </div>
@@ -114,8 +136,13 @@
                                 <div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
                                     <div class="slider-text-inner">
                                         <h1>We are Happy to Create Newest Modern Websites</h1>
-                                        <h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
-                                        <p><a class="btn btn-primary btn-demo popup-vimeo" href="https://vimeo.com/channels/staffpicks/93951774"> <i class="icon-monitor"></i> Live Preview</a> <a class="btn btn-primary btn-learn">Learn More<i class="icon-arrow-right3"></i></a></p>
+                                        <h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a>
+                                        </h2>
+                                        <p><a class="btn btn-primary btn-demo popup-vimeo"
+                                              href="https://vimeo.com/channels/staffpicks/93951774"> <i
+                                                    class="icon-monitor"></i> Live Preview</a> <a
+                                                class="btn btn-primary btn-learn">Learn More<i
+                                                    class="icon-arrow-right3"></i></a></p>
                                     </div>
                                 </div>
                             </div>
@@ -128,8 +155,13 @@
                                 <div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
                                     <div class="slider-text-inner">
                                         <h1>Download our Free HTML5 Bootstrap Template</h1>
-                                        <h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
-                                        <p><a class="btn btn-primary btn-demo popup-vimeo" href="https://vimeo.com/channels/staffpicks/93951774"> <i class="icon-monitor"></i> Live Preview</a> <a class="btn btn-primary btn-learn">Learn More<i class="icon-arrow-right3"></i></a></p>
+                                        <h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a>
+                                        </h2>
+                                        <p><a class="btn btn-primary btn-demo popup-vimeo"
+                                              href="https://vimeo.com/channels/staffpicks/93951774"> <i
+                                                    class="icon-monitor"></i> Live Preview</a> <a
+                                                class="btn btn-primary btn-learn">Learn More<i
+                                                    class="icon-arrow-right3"></i></a></p>
                                     </div>
                                 </div>
                             </div>
@@ -147,10 +179,12 @@
             <div class="row row-bottom-padded-md">
                 <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
                     <div class="blog-entry">
-                        <a href="#" class="blog-img"><img src="images/img-1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+                        <a href="#" class="blog-img"><img src="images/img-1.jpg" class="img-responsive"
+                                                          alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
                         <div class="desc">
                             <h3><a href="#">Inspirational Website</a></h3>
-                            <span><small>by Admin </small> / <small> Web Design </small> / <small> <i class="icon-comment"></i> 14</small></span>
+                            <span><small>by Admin </small> / <small> Web Design </small> / <small> <i
+                                        class="icon-comment"></i> 14</small></span>
                             <p>Design must be functional and functionality must be translated into visual aesthetics</p>
                             <a href="#" class="lead">Read More <i class="icon-arrow-right3"></i></a>
                         </div>
@@ -158,10 +192,12 @@
                 </div>
                 <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
                     <div class="blog-entry">
-                        <a href="#" class="blog-img"><img src="images/img-2.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+                        <a href="#" class="blog-img"><img src="images/img-2.jpg" class="img-responsive"
+                                                          alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
                         <div class="desc">
                             <h3><a href="#">Inspirational Website</a></h3>
-                            <span><small>by Admin </small> / <small> Web Design </small> / <small> <i class="icon-comment"></i> 14</small></span>
+                            <span><small>by Admin </small> / <small> Web Design </small> / <small> <i
+                                        class="icon-comment"></i> 14</small></span>
                             <p>Design must be functional and functionality must be translated into visual aesthetics</p>
                             <a href="#" class="lead">Read More <i class="icon-arrow-right3"></i></a>
                         </div>
@@ -169,10 +205,12 @@
                 </div>
                 <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
                     <div class="blog-entry">
-                        <a href="#" class="blog-img"><img src="images/img-3.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+                        <a href="#" class="blog-img"><img src="images/img-3.jpg" class="img-responsive"
+                                                          alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
                         <div class="desc">
                             <h3><a href="#">Inspirational Website</a></h3>
-                            <span><small>by Admin </small> / <small> Web Design </small> / <small> <i class="icon-comment"></i> 14</small></span>
+                            <span><small>by Admin </small> / <small> Web Design </small> / <small> <i
+                                        class="icon-comment"></i> 14</small></span>
                             <p>Design must be functional and functionality must be translated into visual aesthetics</p>
                             <a href="#" class="lead">Read More <i class="icon-arrow-right3"></i></a>
                         </div>
@@ -180,10 +218,12 @@
                 </div>
                 <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
                     <div class="blog-entry">
-                        <a href="#" class="blog-img"><img src="images/img-4.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+                        <a href="#" class="blog-img"><img src="images/img-4.jpg" class="img-responsive"
+                                                          alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
                         <div class="desc">
                             <h3><a href="#">Inspirational Website</a></h3>
-                            <span><small>by Admin </small> / <small> Web Design </small> / <small> <i class="icon-comment"></i> 14</small></span>
+                            <span><small>by Admin </small> / <small> Web Design </small> / <small> <i
+                                        class="icon-comment"></i> 14</small></span>
                             <p>Design must be functional and functionality must be translated into visual aesthetics</p>
                             <a href="#" class="lead">Read More <i class="icon-arrow-right3"></i></a>
                         </div>
