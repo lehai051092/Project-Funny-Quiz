@@ -14,7 +14,7 @@ class AddCollumnRoleToTableUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('role')->after('password');
+            $table->integer('role')->after('password')->nullable();
         });
     }
 
