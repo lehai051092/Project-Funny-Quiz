@@ -195,17 +195,19 @@
         </div>
         <div class="fh5co-narrow-content">
             @foreach($categories as $key=>$category)
-            <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
-                <div class="blog-entry">
-                    <div class="desc">
-                        <h1><a href="#">{{$category->name}}</a></h1>
-                        <span><small>by Admin </small> / <small> Web Design </small> / <small> <i
-                                    class="icon-comment"></i> 14</small></span>
-                        <a href="{{route('categories.destroy', $category->id)}}">Delete</a>
-
+                <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
+                    <div class="blog-entry">
+                        <a href="#" class="blog-img"><img src="{{asset($category->image)}}" class="img-responsive"
+                                                          alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+                        <div class="desc">
+                            <h3><a href="#">{{$category->name}}</a></h3>
+                            <span><small>by Admin </small> / <small> Web Design </small> / <small> <i
+                                        class="icon-comment"></i> 14</small></span>
+                            <p>Design must be functional and functionality must be translated into visual aesthetics</p>
+                            <a href="#" class="lead">Read More <i class="icon-arrow-right3"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
                 @endforeach
         </div>
 
