@@ -99,7 +99,7 @@
                                           style="display: none;"> @csrf </form>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">Information</a>
+                                    <a class="dropdown-item" href="{{route('users.information', Auth::user()->id)}}">Profile</a>
                                 </li>
                             </ul>
                         </div>
