@@ -72,23 +72,42 @@
     <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
 
         <h1 id="fh5co-logo"><a href="">FUNNY QUIZ</a></h1>
+
         <nav id="fh5co-main-menu" role="navigation">
             <ul>
-                <li class="fh5co-active"><a href="">Home</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        CateGory
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <ul>
-                            <li><a class="dropdown-item" href="#">Thể thao</a></li>
-                            <li><a class="dropdown-item" href="#">Giải trí</a></li>
-                        </ul>
-                    </div>
-                </li>
+                <li class="fh5co-active"><a href="{{route('index')}}">Home</a>
+                <li><a href="{{route('categories.list')}}">Category</a></li>
+            @guest
+                    <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li> @if (Route::has('register'))
+                        <li class="nav-item"><a class="nav-link"
+                                                href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li> @endif @else
+                    <li class="nav-item dropdown"><a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
+                                                     role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                     aria-expanded="false" v-pre> {{ Auth::user()->name }} <span
+                                class="caret"></span> </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <ul>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Logout') }} </a>
+                                </li>
+                                <li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;"> @csrf </form>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Information</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </li> @endguest
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+
             </ul>
         </nav>
 
@@ -110,7 +129,7 @@
         <aside id="fh5co-hero" class="js-fullheight">
             <div class="flexslider js-fullheight">
                 <ul class="slides">
-                    <li style="background-image: url(images/img_bg_1.jpg);">
+                    <li style="background-image: url({{asset('storage/images/img_bg_1.jpg')}});">
                         <div class="overlay"></div>
                         <div class="container-fluid">
                             <div class="row">
@@ -129,7 +148,7 @@
                             </div>
                         </div>
                     </li>
-                    <li style="background-image: url(images/img_bg_2.jpg);">
+                    <li style="background-image: url({{asset('storage/images/img_bg_2.jpg')}});">
                         <div class="overlay"></div>
                         <div class="container-fluid">
                             <div class="row">
@@ -148,7 +167,7 @@
                             </div>
                         </div>
                     </li>
-                    <li style="background-image: url(images/img_bg_3.jpg);">
+                    <li style="background-image: url({{asset('storage/images/img_bg_3.jpg')}});">
                         <div class="overlay"></div>
                         <div class="container-fluid">
                             <div class="row">
