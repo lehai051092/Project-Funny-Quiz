@@ -130,7 +130,7 @@
         <aside id="fh5co-hero" class="js-fullheight">
             <div class="flexslider js-fullheight">
                 <ul class="slides">
-                    <li style="background-image: url(images/img_bg_1.jpg);">
+                    <li style="background-image: url({{asset('storage/image/anhnen1.jpg')}});">
                         <div class="overlay"></div>
                         <div class="container-fluid">
                             <div class="row">
@@ -149,7 +149,7 @@
                             </div>
                         </div>
                     </li>
-                    <li style="background-image: url(images/img_bg_2.jpg);">
+                    <li style="background-image: url({{asset('storage/image/anhnen2.jpg')}});">
                         <div class="overlay"></div>
                         <div class="container-fluid">
                             <div class="row">
@@ -168,7 +168,7 @@
                             </div>
                         </div>
                     </li>
-                    <li style="background-image: url(images/img_bg_3.jpg);">
+                    <li style="background-image: url({{asset('storage/image/anhnen3.jpg')}});">
                         <div class="overlay"></div>
                         <div class="container-fluid">
                             <div class="row">
@@ -195,17 +195,19 @@
         </div>
         <div class="fh5co-narrow-content">
             @foreach($categories as $key=>$category)
-            <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
-                <div class="blog-entry">
-                    <div class="desc">
-                        <h1><a href="#">{{$category->name}}</a></h1>
-                        <span><small>by Admin </small> / <small> Web Design </small> / <small> <i
-                                    class="icon-comment"></i> 14</small></span>
-                        <a href="{{route('categories.destroy', $category->id)}}">Delete</a>
-
+                <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
+                    <div class="blog-entry">
+                        <a href="#" class="blog-img"><img src="{{asset('storage/'.$category->image)}}" class="img-responsive"
+                                                          alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+                        <div class="desc">
+                            <h3><a href="#">{{$category->name}}</a></h3>
+                            <span><small>by Admin team ??? </small> / <small> Web Design </small> / <small> <i
+                                        class="icon-comment"></i> 14</small></span>
+                            <p>{{$category->title}}</p>
+                            <a href="{{route('categories.destroy',$category->id)}}" style="color: red">Delete <i class="icon-arrow-right3"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
                 @endforeach
         </div>
 
