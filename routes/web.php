@@ -30,3 +30,10 @@ Route::prefix('categories')->group(function (){
     Route::post('/store','CategoryController@store')->name('categories.store');
     Route::get('/{id}/delete','CategoryController@destroy')->name('categories.destroy');
 });
+
+Route::prefix('users')->group(function (){
+    Route::get('{id}/information', 'UserController@information')->name('users.information');
+    Route::post('{id}/information', 'UserController@update')->name('users.update');
+    Route::get('change-password', 'UserController@changePassword')->name('users.changePassword');
+    Route::post('change-password', 'UserController@updatePassword')->name('users.updatePassword');
+});
