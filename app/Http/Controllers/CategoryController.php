@@ -14,7 +14,7 @@ class CategoryController extends Controller
     }
 
     public function create(){
-        return view('categories.create',compact('categories'));
+        return view('categories.create');
     }
 
     public function store(Request $request){
