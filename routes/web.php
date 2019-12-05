@@ -16,8 +16,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $categories = Category::all();
-    return view('index', compact('categories'));
+    return view('index');
 })->name('index');
 
 
