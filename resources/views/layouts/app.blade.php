@@ -129,7 +129,7 @@
         <aside id="fh5co-hero" class="js-fullheight">
             <div class="flexslider js-fullheight">
                 <ul class="slides">
-                    <li style="background-image: url({{asset('storage/images/img_bg_1.jpg')}});">
+                    <li style="background-image: url({{asset('storage/image/anhnen1.jpg')}});">
                         <div class="overlay"></div>
                         <div class="container-fluid">
                             <div class="row">
@@ -148,7 +148,7 @@
                             </div>
                         </div>
                     </li>
-                    <li style="background-image: url({{asset('storage/images/img_bg_2.jpg')}});">
+                    <li style="background-image: url({{asset('storage/image/anhnen2.jpg')}});">
                         <div class="overlay"></div>
                         <div class="container-fluid">
                             <div class="row">
@@ -167,7 +167,7 @@
                             </div>
                         </div>
                     </li>
-                    <li style="background-image: url({{asset('storage/images/img_bg_3.jpg')}});">
+                    <li style="background-image: url({{asset('storage/image/anhnen3.jpg')}});">
                         <div class="overlay"></div>
                         <div class="container-fluid">
                             <div class="row">

@@ -130,7 +130,7 @@
         <aside id="fh5co-hero" class="js-fullheight">
             <div class="flexslider js-fullheight">
                 <ul class="slides">
-                    <li style="background-image: url(images/img_bg_1.jpg);">
+                    <li style="background-image: url({{asset('storage/image/anhnen1.jpg')}});">
                         <div class="overlay"></div>
                         <div class="container-fluid">
                             <div class="row">
@@ -149,7 +149,7 @@
                             </div>
                         </div>
                     </li>
-                    <li style="background-image: url(images/img_bg_2.jpg);">
+                    <li style="background-image: url({{asset('storage/image/anhnen2.jpg')}});">
                         <div class="overlay"></div>
                         <div class="container-fluid">
                             <div class="row">
@@ -168,7 +168,7 @@
                             </div>
                         </div>
                     </li>
-                    <li style="background-image: url(images/img_bg_3.jpg);">
+                    <li style="background-image: url({{asset('storage/image/anhnen3.jpg')}});">
                         <div class="overlay"></div>
                         <div class="container-fluid">
                             <div class="row">
@@ -197,14 +197,14 @@
             @foreach($categories as $key=>$category)
                 <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
                     <div class="blog-entry">
-                        <a href="#" class="blog-img"><img src="{{asset($category->image)}}" class="img-responsive"
+                        <a href="#" class="blog-img"><img src="{{asset('storage/'.$category->image)}}" class="img-responsive"
                                                           alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
                         <div class="desc">
                             <h3><a href="#">{{$category->name}}</a></h3>
-                            <span><small>by Admin </small> / <small> Web Design </small> / <small> <i
+                            <span><small>by Admin team ??? </small> / <small> Web Design </small> / <small> <i
                                         class="icon-comment"></i> 14</small></span>
-                            <p>Design must be functional and functionality must be translated into visual aesthetics</p>
-                            <a href="#" class="lead">Read More <i class="icon-arrow-right3"></i></a>
+                            <p>{{$category->title}}</p>
+                            <a href="{{route('categories.destroy',$category->id)}}" style="color: red">Delete <i class="icon-arrow-right3"></i></a>
                         </div>
                     </div>
                 </div>
