@@ -204,7 +204,7 @@
                             <span><small>by Admin team ??? </small> / <small> Web Design </small> / <small> <i
                                         class="icon-comment"></i> 14</small></span>
                             <p>{{$category->title}}</p>
-                            <a href="{{route('categories.destroy',$category->id)}}" style="color: red">Delete <i class="icon-arrow-right3"></i></a>
+                            <a href="{{route('categories.destroy',$category->id)}}" style="color: red" onclick="return confirm('Are you sure???')">Delete <i class="icon-arrow-right3"></i></a>
                         </div>
                     </div>
                 </div>
