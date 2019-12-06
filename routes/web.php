@@ -32,8 +32,11 @@ Route::prefix('categories')->group(function (){
 });
 
 Route::prefix('users')->group(function (){
+    Route::get('list', 'UserController@getAll')->name('users.list');
+    Route::get('{id}/edit', 'UserController@edit')->name('users.edit');
+    Route::post('{id}/update', 'UserController@update')->name('users.update');
     Route::get('{id}/information', 'UserController@information')->name('users.information');
-    Route::post('{id}/information', 'UserController@update')->name('users.update');
+    Route::post('{id}/information', 'UserController@update')->name('users.updateInformation');
     Route::get('change-password', 'UserController@changePassword')->name('users.changePassword');
     Route::post('change-password', 'UserController@updatePassword')->name('users.updatePassword');
 });
