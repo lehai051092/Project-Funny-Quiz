@@ -3,14 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Services\CategoryServiceInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
 class CategoryController extends Controller
 {
+    protected $categoryService;
+    public function __construct(CategoryServiceInterface $categoryService)
+    {
+        $this->categoryService= $categoryService;
+    }
+
     public function getALL()
     {
-        $categories = Category::all();
+        $categories = $this->categoryService->getALL();
         return view('categories.list', compact('categories'));
     }
 
@@ -19,28 +26,12 @@ class CategoryController extends Controller
     }
 
     public function store(Request $request){
-        $category = new Category();
-        $category->name = $request->name;
-        $category->title = $request->title;
-        if (!$request->hasFile('image')) {
-            $category->image = $request->image;
-        } else {
-            $image = $request->file('image');
-            $path = $image->store('image', 'public');
-            $category->image = $path;
-        }
-
-        $category->save();
+        $this->categoryService->create($request);
         return redirect()->route('categories.list');
     }
 
     public function destroy($id){
-        $category = Category::findOrFail($id);
-        if(file_exists(storage_path("/app/public/$category->image"))){
-            File::delete(storage_path("/app/public/$category->image"));
-        }
-        $category->delete();
-
+        $this->categoryService->delete($id);
         return redirect()->route('categories.list');
     }
 
