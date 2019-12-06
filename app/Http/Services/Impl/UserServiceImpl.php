@@ -30,4 +30,9 @@ class UserServiceImpl implements UserServiceInterface
 
         $this->userRespository->save($user);
     }
+
+    function getAll()
+    {
+        return $this->userRespository->getAll();
+    }
 }

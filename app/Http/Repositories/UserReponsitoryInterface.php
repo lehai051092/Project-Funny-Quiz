@@ -9,4 +9,6 @@ interface UserReponsitoryInterface
     function findById($id);
 
     function save($user);
+
+    function getAll();
 }

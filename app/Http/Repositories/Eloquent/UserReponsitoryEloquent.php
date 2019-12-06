@@ -25,4 +25,9 @@ class UserReponsitoryEloquent implements UserReponsitoryInterface
     {
         $user->save();
     }
+
+    function getAll()
+    {
+        return $this->user->all();
+    }
 }

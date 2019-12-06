@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EditUserRequest;
 use App\Http\Services\Impl\UserServiceImpl;
 use App\Rules\MatchOldPassword;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -23,6 +25,15 @@ class UserController extends Controller
         $user = $this->userService->findById($id);
 
         return view('users.information', compact('user'));
+    }
+
+    public function edit($id)
+    {
+       if (Gate::allows('crud-users')) {
+           $user = $this->userService->findById($id);
+           return view('users.edit', compact('user'));
+       }
+       abort(403, 'you do not have access');
     }
 
     public function changePassword()
@@ -45,10 +56,20 @@ class UserController extends Controller
         return view('users.success', compact('message'));
     }
 
-    public function update(Request $request, $id) {
+    public function update(EditUserRequest $request, $id)
+    {
         $this->userService->update($request, $id);
         $message = 'Change Profile Success';
 
         return view('users.success', compact('message'));
+    }
+
+    public function getAll()
+    {
+       if (Gate::allows('crud-users')) {
+           $users = $this->userService->getAll();
+           return view('users.list', compact('users'));
+       }
+       abort(403, 'you do not have access');
     }
 }

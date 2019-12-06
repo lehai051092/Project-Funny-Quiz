@@ -77,7 +77,7 @@
             <ul>
                 <li class="fh5co-active"><a href="{{route('index')}}">Home</a>
                 <li><a href="{{route('categories.list')}}">Category</a></li>
-            @guest
+                @guest
                     <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li> @if (Route::has('register'))
                         <li class="nav-item"><a class="nav-link"
@@ -101,6 +101,11 @@
                                 <li>
                                     <a class="dropdown-item" href="{{route('users.information', Auth::user()->id)}}">Profile</a>
                                 </li>
+                                @can('crud-users')
+                                    <li>
+                                        <a class="dropdown-item" href="{{route('users.list')}}">List User</a>
+                                    </li>
+                                @endcan
                             </ul>
                         </div>
 
