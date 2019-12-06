@@ -25,6 +25,7 @@ class EditUserRequest extends FormRequest
     {
         return [
             'name' => 'required',
+            'title' => 'required',
         ];
     }
 }
