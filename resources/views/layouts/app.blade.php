@@ -66,6 +66,7 @@
     <script src="{{asset('storage/js/respond.min.js')}}"></script>
 
 
+
 </head>
 <body>
 <div id="fh5co-page">
@@ -113,7 +114,6 @@
                             </div>
                         </li>
                         @endguest
-                    </ul>
                     </ul>
             </div>
             <ul>

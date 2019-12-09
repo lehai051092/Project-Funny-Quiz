@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AnswerRequest;
+use App\Http\Requests\EditUserRequest;
+use App\Http\Requests\QuestionRequest;
 use App\Http\Services\AnswerServiceInterface;
 use App\Http\Services\QuestionServiceInterface;
-use Illuminate\Http\Request;
 
 class AnswerController extends Controller
 {
@@ -25,14 +27,14 @@ class AnswerController extends Controller
         return view('questions.list', compact('question', 'answers'));
     }
 
-    public function create()
+    public function create($id)
     {
         $answers = $this->answerService->getALL();
-        $questions = $this->questionService->getALL();
-        return view('answer.createForm', compact('answers', 'questions'));
+        $question = $this->questionService->findById($id);
+        return view('answer.createForm', compact('answers', 'question'));
     }
 
-    public function store(Request $request)
+    public function store(AnswerRequest $request)
     {
         $this->answerService->create($request);
         return redirect()->route('categories.list');
@@ -51,7 +53,7 @@ class AnswerController extends Controller
         return view('answer.editForm', compact('answer', 'questions'));
     }
 
-    public function update(Request $request,$id){
+    public function update(AnswerRequest $request,$id){
         $this->answerService->update($request,$id);
         return redirect()->route('categories.list');
     }
