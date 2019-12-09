@@ -8,11 +8,25 @@
                         @csrf
                         <div class="form-group">
                             <label>Name Category</label>
-                            <input type="text" class="form-control" placeholder="Enter Name Category" name="name">
+                            <input type="text" class="form-control" placeholder="Enter Name Category" name="name"
+                                   @if($errors->has('name'))
+                                   style="border: solid red"
+                                @endif
+                            >
+                            @if($errors->has('name'))
+                                <p class="text-danger">{{$errors->first('name')}}</p>
+                            @endif
                         </div>
                         <div class="form-group">
                             <label>Title Category</label>
-                            <input type="text" class="form-control" placeholder="Enter Title Category" name="title">
+                            <input type="text" class="form-control" placeholder="Enter Title Category" name="title"
+                                   @if($errors->has('title'))
+                                   style="border: solid red"
+                                @endif
+                            >
+                            @if($errors->has('title'))
+                                <p class="text-danger">{{$errors->first('title')}}</p>
+                            @endif
                         </div>
                         <div class="form-group">
                             <label>Category photos</label>
