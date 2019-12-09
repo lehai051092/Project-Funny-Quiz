@@ -5,7 +5,15 @@
         <h1>Chỉnh sửa câu trả lời</h1>
         <div class="form-group">
             <label>Answer</label>
-            <input type="text" class="form-control" name="answer" value="{{$answer->answer}}">
+            <input
+                @if($errors->has('answer'))
+                style="border: solid 1px red"
+                @endif
+                type="text" class="form-control" name="answer" value="{{$answer->answer}}">
+            @if($errors->has('answer'))
+                <p class="text-danger">{{$errors->first('answer')}}</p>
+            @endif
+
         </div>
 
         <div class="form-group">
@@ -14,7 +22,7 @@
                 @foreach($questions as $key=> $question)
                     <option
                         @if($answer->question_id===$question->id)
-                            selected
+                        selected
                         @endif
                         value="{{$question->id}}">{{$question->question}}</option>
                 @endforeach
