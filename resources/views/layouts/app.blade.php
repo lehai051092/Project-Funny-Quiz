@@ -57,7 +57,8 @@
     <link rel="stylesheet" href="{{asset('storage/css/flexslider.css')}}">
     <!-- Theme style  -->
     <link rel="stylesheet" href="{{asset('storage/css/style.css')}}">
-
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Modernizr JS -->
     <script src="{{asset('storage/js/modernizr-2.6.2.min.js')}}"></script>
     <!-- FOR IE9 below -->
@@ -71,47 +72,56 @@
     <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
     <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
 
-        <h1 id="fh5co-logo"><a href="">FUNNY QUIZ</a></h1>
+        <h1 id="fh5co-logo"><a href="{{route('index')}}">FUNNY QUIZ</a></h1>
 
         <nav id="fh5co-main-menu" role="navigation">
-            <ul>
-                <li class="fh5co-active"><a href="{{route('index')}}">Home</a>
-                <li><a href="{{route('categories.list')}}">Category</a></li>
+            <div class="fh5co-heading text-center">
+
                 @guest
-                    <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li> @if (Route::has('register'))
-                        <li class="nav-item"><a class="nav-link"
-                                                href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li> @endif @else
-                    <li class="nav-item dropdown"><a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
-                                                     role="button" data-toggle="dropdown" aria-haspopup="true"
-                                                     aria-expanded="false" v-pre> {{ Auth::user()->name }} <span
-                                class="caret"></span> </a>
+                    <a href="{{ route('login') }}"><i class="fa fa-user"
+                                                      aria-hidden="true" style="color: black">Login</i></a><br>
+                    @if (Route::has('register'))
+                        <a class="nav-link"
+                           href="{{ route('register') }}"><i class="fa fa-user-plus" style="color: black" aria-hidden="true">Register</i></a>
+                    @endif @else
+                    <ul style="list-style: none">
+                        <li class="nav-item dropdown"><a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
+                                                         role="button" data-toggle="dropdown"><img
+                                    src="https://img.icons8.com/ios-filled/50/000000/user.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;{{ Auth::user()->name}}
+                            </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <ul>
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Logout') }} </a>
-                                </li>
-                                <li>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                          style="display: none;"> @csrf </form>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{{route('users.information', Auth::user()->id)}}">Profile</a>
-                                </li>
-                                @can('crud-users')
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <ul style="list-style: none">
                                     <li>
-                                        <a class="dropdown-item" href="{{route('users.list')}}">List User</a>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Logout') }} </a>
                                     </li>
-                                @endcan
-                            </ul>
-                        </div>
+                                    <li>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                              style="display: none;"> @csrf </form>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                           href="{{route('users.information', Auth::user()->id)}}">Profile</a>
+                                    </li>
+                                    @can('crud-users')
+                                        <li>
+                                            <a class="dropdown-item" href="{{route('users.list')}}">List User</a>
+                                        </li>
+                                    @endcan
+                                </ul>
+                            </div>
+                        </li>
+                        @endguest
+                    </ul>
+                    </ul>
+            </div>
+            <ul>
 
-                    </li> @endguest
-                <li><a href="{{route('about')}}">About</a></li>
-                <li><a href="{{route('contact')}}">Contact</a></li>
+                <li><a href="{{route('index')}}"><i class="fa fa-home">Home</i></a>
+                <li><a href="{{route('categories.list')}}"><i class="fa fa-align-justify">Category</i></a></li>
+                <li><a href="{{route('about')}}"><i class="fa fa-book">About</i></a></li>
+                <li><a href="{{route('contact')}}"><i class="fa fa-phone">Contact</i></a></li>
 
             </ul>
         </nav>
@@ -131,129 +141,9 @@
     </aside>
 
     <div id="fh5co-main">
-        <aside id="fh5co-hero" class="js-fullheight">
-            <div class="flexslider js-fullheight">
-                <ul class="slides">
-                    <li style="background-image: url({{asset('storage/image/anhnen1.jpg')}});">
-                        <div class="overlay"></div>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
-                                    <div class="slider-text-inner">
-                                        <h1>Intuitive <strong></strong> is How Give We the User New Superpowers</h1>
-                                        <h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a>
-                                        </h2>
-                                        <p><a class="btn btn-primary btn-demo popup-vimeo"
-                                              href="https://vimeo.com/channels/staffpicks/93951774"> <i
-                                                    class="icon-monitor"></i> Live Preview</a> <a
-                                                class="btn btn-primary btn-learn">Learn More<i
-                                                    class="icon-arrow-right3"></i></a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="background-image: url({{asset('storage/image/anhnen2.jpg')}});">
-                        <div class="overlay"></div>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
-                                    <div class="slider-text-inner">
-                                        <h1>We are Happy to Create Newest Modern Websites</h1>
-                                        <h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a>
-                                        </h2>
-                                        <p><a class="btn btn-primary btn-demo popup-vimeo"
-                                              href="https://vimeo.com/channels/staffpicks/93951774"> <i
-                                                    class="icon-monitor"></i> Live Preview</a> <a
-                                                class="btn btn-primary btn-learn">Learn More<i
-                                                    class="icon-arrow-right3"></i></a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="background-image: url({{asset('storage/image/anhnen3.jpg')}});">
-                        <div class="overlay"></div>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
-                                    <div class="slider-text-inner">
-                                        <h1>Download our Free HTML5 Bootstrap Template</h1>
-                                        <h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a>
-                                        </h2>
-                                        <p><a class="btn btn-primary btn-demo popup-vimeo"
-                                              href="https://vimeo.com/channels/staffpicks/93951774"> <i
-                                                    class="icon-monitor"></i> Live Preview</a> <a
-                                                class="btn btn-primary btn-learn">Learn More<i
-                                                    class="icon-arrow-right3"></i></a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </aside>
 
         <div class="fh5co-narrow-content">
             @yield('content')
-        </div>
-        <div class="fh5co-narrow-content">
-            <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Recent Blog</h2>
-            <div class="row row-bottom-padded-md">
-                <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
-                    <div class="blog-entry">
-                        <a href="#" class="blog-img"><img src="images/img-1.jpg" class="img-responsive"
-                                                          alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-                        <div class="desc">
-                            <h3><a href="#">Inspirational Website</a></h3>
-                            <span><small>by Admin </small> / <small> Web Design </small> / <small> <i
-                                        class="icon-comment"></i> 14</small></span>
-                            <p>Design must be functional and functionality must be translated into visual aesthetics</p>
-                            <a href="#" class="lead">Read More <i class="icon-arrow-right3"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
-                    <div class="blog-entry">
-                        <a href="#" class="blog-img"><img src="images/img-2.jpg" class="img-responsive"
-                                                          alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-                        <div class="desc">
-                            <h3><a href="#">Inspirational Website</a></h3>
-                            <span><small>by Admin </small> / <small> Web Design </small> / <small> <i
-                                        class="icon-comment"></i> 14</small></span>
-                            <p>Design must be functional and functionality must be translated into visual aesthetics</p>
-                            <a href="#" class="lead">Read More <i class="icon-arrow-right3"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
-                    <div class="blog-entry">
-                        <a href="#" class="blog-img"><img src="images/img-3.jpg" class="img-responsive"
-                                                          alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-                        <div class="desc">
-                            <h3><a href="#">Inspirational Website</a></h3>
-                            <span><small>by Admin </small> / <small> Web Design </small> / <small> <i
-                                        class="icon-comment"></i> 14</small></span>
-                            <p>Design must be functional and functionality must be translated into visual aesthetics</p>
-                            <a href="#" class="lead">Read More <i class="icon-arrow-right3"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
-                    <div class="blog-entry">
-                        <a href="#" class="blog-img"><img src="images/img-4.jpg" class="img-responsive"
-                                                          alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-                        <div class="desc">
-                            <h3><a href="#">Inspirational Website</a></h3>
-                            <span><small>by Admin </small> / <small> Web Design </small> / <small> <i
-                                        class="icon-comment"></i> 14</small></span>
-                            <p>Design must be functional and functionality must be translated into visual aesthetics</p>
-                            <a href="#" class="lead">Read More <i class="icon-arrow-right3"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
     </div>
