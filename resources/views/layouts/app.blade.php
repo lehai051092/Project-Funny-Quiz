@@ -57,7 +57,8 @@
     <link rel="stylesheet" href="{{asset('storage/css/flexslider.css')}}">
     <!-- Theme style  -->
     <link rel="stylesheet" href="{{asset('storage/css/style.css')}}">
-
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Modernizr JS -->
     <script src="{{asset('storage/js/modernizr-2.6.2.min.js')}}"></script>
     <!-- FOR IE9 below -->
@@ -74,44 +75,54 @@
         <h1 id="fh5co-logo"><a href="">FUNNY QUIZ</a></h1>
 
         <nav id="fh5co-main-menu" role="navigation">
-            <ul>
-                <li class="fh5co-active"><a href="{{route('index')}}">Home</a>
-                <li><a href="{{route('categories.list')}}">Category</a></li>
+            <div class="fh5co-heading text-center">
+
                 @guest
-                    <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li> @if (Route::has('register'))
-                        <li class="nav-item"><a class="nav-link"
-                                                href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li> @endif @else
-                    <li class="nav-item dropdown"><a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
-                                                     role="button" data-toggle="dropdown" aria-haspopup="true"
-                                                     aria-expanded="false" v-pre> {{ Auth::user()->name }} <span
-                                class="caret"></span> </a>
+                    <a href="{{ route('login') }}"><i class="fa fa-user"
+                                                      aria-hidden="true" style="color: black">Login</i></a><br>
+                    @if (Route::has('register'))
+                        <a class="nav-link"
+                           href="{{ route('register') }}"><i class="fa fa-user-plus" style="color: black" aria-hidden="true">Register</i></a>
+                    @endif @else
+                    <ul style="list-style: none">
+                        <li class="nav-item dropdown"><a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
+                                                         role="button" data-toggle="dropdown"><img
+                                    src="https://img.icons8.com/ios-filled/50/000000/user.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;{{ Auth::user()->name}}
+                            </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <ul>
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Logout') }} </a>
-                                </li>
-                                <li>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                          style="display: none;"> @csrf </form>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{{route('users.information', Auth::user()->id)}}">Profile</a>
-                                </li>
-                                @can('crud-users')
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <ul style="list-style: none">
                                     <li>
-                                        <a class="dropdown-item" href="{{route('users.list')}}">List User</a>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Logout') }} </a>
                                     </li>
-                                @endcan
-                            </ul>
-                        </div>
+                                    <li>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                              style="display: none;"> @csrf </form>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                           href="{{route('users.information', Auth::user()->id)}}">Profile</a>
+                                    </li>
+                                    @can('crud-users')
+                                        <li>
+                                            <a class="dropdown-item" href="{{route('users.list')}}">List User</a>
+                                        </li>
+                                    @endcan
+                                </ul>
+                            </div>
+                        </li>
+                        @endguest
+                    </ul>
+                    </ul>
+            </div>
+            <ul>
 
-                    </li> @endguest
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li class="fh5co-active"><a href="{{route('index')}}"><i class="fa fa-home">Home</i></a>
+                <li><a href="{{route('categories.list')}}"><i class="fa fa-align-justify">Category</i></a></li>
+
+                <li><a href="about.html"><i class="fa fa-book">About</i></a></li>
+                <li><a href="contact.html"><i class="fa fa-phone">Contact</i></a></li>
 
             </ul>
         </nav>
