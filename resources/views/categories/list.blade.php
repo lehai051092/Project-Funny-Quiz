@@ -200,7 +200,7 @@
                         <a href="#" class="blog-img"><img src="{{asset('storage/'.$category->image)}}" class="img-responsive"
                                                           alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
                         <div class="desc">
-                            <h3><a href="#">{{$category->name}}</a></h3>
+                            <h3><a href="{{route('questions.list',$category->id)}}">{{$category->name}}</a></h3>
                             <span><small>by Admin team ??? </small> / <small> Web Design </small> / <small> <i
                                         class="icon-comment"></i> 14</small></span>
                             <p>{{$category->title}}</p>
