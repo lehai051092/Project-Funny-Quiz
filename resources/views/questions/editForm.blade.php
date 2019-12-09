@@ -5,7 +5,14 @@
         <h1>Chỉnh sửa câu hỏi</h1>
         <div class="form-group">
             <label>Question</label>
-            <input type="text" class="form-control" name="question" value="{{$question->question}}">
+            <input
+                @if($errors->has('question'))
+                style="border: solid 1px red"
+                @endif
+                type="text" class="form-control" name="question" value="{{$question->question}}">
+            @if($errors->has('question'))
+                <p class="text-danger">{{$errors->first('question')}}</p>
+            @endif
         </div>
         <div class="form-group">
             <label>Category</label>

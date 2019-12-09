@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EditUserRequest;
+use App\Http\Requests\QuestionRequest;
 use App\Http\Services\AnswerServiceInterface;
 use App\Http\Services\CategoryServiceInterface;
 use App\Http\Services\QuestionServiceInterface;
-use Illuminate\Http\Request;
 
 class
 QuestionController extends Controller
@@ -22,6 +23,7 @@ QuestionController extends Controller
         $this->questionService = $questionService;
         $this->categoryService = $categoryService;
         $this->answerService = $answerService;
+        $this->middleware('auth');
     }
 
     public function questionsInCategory($id)
@@ -40,11 +42,11 @@ QuestionController extends Controller
         return view('questions.createForm', compact('categories'));
     }
 
-    public
-    function store(Request $request)
+    public function store(QuestionRequest $request)
     {
+//        dd(1234);
         $this->questionService->create($request);
-        return redirect()->route('index');
+        return redirect()->route('categories.list');
 //        $categories = $this->categoryService->getALL();
 //        $questions = $this->questionService->getALL();
 //        foreach ($categories as $category) {
@@ -69,7 +71,7 @@ QuestionController extends Controller
         return view('questions.editForm', compact('question', 'categories'));
     }
 
-    public function update(Request $request, $id)
+    public function update(QuestionRequest $request, $id)
     {
         $this->questionService->update($request, $id);
         return redirect()->route('categories.list');
