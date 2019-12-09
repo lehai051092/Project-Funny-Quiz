@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\EditUserRequest;
 use App\Http\Services\CategoryServiceInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -25,7 +26,7 @@ class CategoryController extends Controller
         return view('categories.create');
     }
 
-    public function store(Request $request){
+    public function store(EditUserRequest $request){
         $this->categoryService->create($request);
         return redirect()->route('categories.list');
     }
