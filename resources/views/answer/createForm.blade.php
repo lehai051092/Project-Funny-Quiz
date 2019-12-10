@@ -15,17 +15,16 @@
                 <p class="text-danger">{{$errors->first('answer')}}</p>
             @endif
         </div>
-
         <div class="form-group">
             <label>Question</label>
-            <select name="question_id" >
-                @foreach($answers as $key=> $answer)
-                    <option
-                        @if($answer->question_id===$question->id)
-                            selected
-                        @endif
-                        value="{{$question->id}}">{{$question->question}}</option>
-                @endforeach
+            <select name="question_id">
+                <option
+                    @if($answers)
+                    @if($answers->question_id===$answers->question->id)
+                    selected
+                    @endif
+                    @endif
+                    value="{{$question->id}}">{{$question->question}}</option>
             </select>
 
         </div>
