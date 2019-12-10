@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @can('crud-users')
-        <a href="{{route('questions.create')}}">
+        <a href="{{route('questions.create',$category->id )}}">
             <button type="button" class="btn btn-link">Thêm mới</button>
         </a>
     @endcan

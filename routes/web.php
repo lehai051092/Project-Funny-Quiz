@@ -51,8 +51,8 @@ Route::prefix('users')->group(function () {
 
 Route::prefix('questions')->group(function () {
     Route::get('{id}/questionInCategory', 'QuestionController@questionsInCategory')->name('questions.list');
-    Route::get('create', 'QuestionController@create')->name('questions.create');
-    Route::post('create', 'QuestionController@store')->name('questions.store');
+    Route::get('{id}/create', 'QuestionController@create')->name('questions.create');
+    Route::post('{id}/create', 'QuestionController@store')->name('questions.store');
     Route::get('{id}/delete', 'QuestionController@delete')->name('questions.delete');
     Route::get('{id}/edit', 'QuestionController@edit')->name('questions.edit');
     Route::post('{id}/edit', 'QuestionController@update')->name('questions.update');

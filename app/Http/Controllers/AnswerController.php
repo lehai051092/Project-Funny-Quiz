@@ -22,16 +22,16 @@ class AnswerController extends Controller
 
     public function answersInQuestion()
     {
-        $question = $this->questionService->getALL();
-        $answers = $question->answers;
-        return view('questions.list', compact('question', 'answers'));
+        $questions= $this->questionService->getALL();
+        $answers = $this->answerService->getALL();
+        return view('questions.list', compact('questions', 'answers'));
     }
 
     public function create($id)
     {
-        $answers = $this->answerService->getALL();
         $question = $this->questionService->findById($id);
-        return view('answer.createForm', compact('answers', 'question'));
+        $answers =$question->answers->first();
+        return view('answer.createForm', compact('answers','question'));
     }
 
     public function store(AnswerRequest $request)

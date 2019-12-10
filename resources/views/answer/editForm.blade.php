@@ -19,13 +19,15 @@
         <div class="form-group">
             <label>Question</label>
             <select name="question_id">
-                @foreach($questions as $key=> $question)
+                @foreach($questions as $question)
                     <option
-                        @if($answer->question_id===$question->id)
+                        @if($answer->question_id==$question->id)
                         selected
                         @endif
-                        value="{{$question->id}}">{{$question->question}}</option>
+                        value="{{$question->id}}">{{$question->question}}
+                    </option>
                 @endforeach
+
             </select>
         </div>
 

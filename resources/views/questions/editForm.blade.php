@@ -17,13 +17,14 @@
         <div class="form-group">
             <label>Category</label>
             <select name="category_id">
-                @foreach($categories as $key=> $category)
+                @foreach($categories as $category)
                     <option
-                        @if($question->category_id==$category->id)
+                        @if($question->category_id == $category->id)
                         selected
                         @endif
-                        value="{{$category->id}}">{{$category->name}}</option>
-                @endforeach
+                        value="{{$category->id}}">{{$category->name}}
+                    </option>
+                    @endforeach
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>

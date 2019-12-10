@@ -127,7 +127,7 @@
         </nav>
 
         <div class="fh5co-footer">
-            <p><small>&copy; 2016 Blend Free HTML5. All Rights Reserved.</span> <span>Designed by <a
+            <p><small>&copy; 2016 Blend Free HTML5. All Rights Reserved. <span>Designed by <a
                             href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> </span> <span>Demo Images: <a
                             href="https://unsplash.com/" target="_blank">Unsplash</a></span></small></p>
             <ul>

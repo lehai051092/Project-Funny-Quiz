@@ -35,26 +35,18 @@ QuestionController extends Controller
     }
 
     public
-    function create()
+    function create($id)
     {
-        $categories = $this->categoryService->getALL();
-//        $answers = $this->answerService->getALL();
-        return view('questions.createForm', compact('categories'));
+        $category = $this->categoryService->findById($id);
+        $questions= $category->questions->first();
+//
+        return view('questions.createForm', compact('category','questions'));
     }
 
     public function store(QuestionRequest $request)
     {
-//        dd(1234);
         $this->questionService->create($request);
         return redirect()->route('categories.list');
-//        $categories = $this->categoryService->getALL();
-//        $questions = $this->questionService->getALL();
-//        foreach ($categories as $category) {
-//            foreach ($questions as $question) {
-//                if ($question->category_id === $category->id)
-//                    return redirect()->route('questions.list', $category->id);
-//            }
-//        }
 
     }
 
@@ -66,8 +58,8 @@ QuestionController extends Controller
 
     public function edit($id)
     {
-        $question = $this->questionService->findById($id);
-        $categories = $this->categoryService->getALL();
+       $question=$this->questionService->findById($id);
+       $categories=$this->categoryService->getALL();
         return view('questions.editForm', compact('question', 'categories'));
     }
 
