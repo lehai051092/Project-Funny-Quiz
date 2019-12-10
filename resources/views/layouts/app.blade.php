@@ -57,8 +57,10 @@
     <link rel="stylesheet" href="{{asset('storage/css/flexslider.css')}}">
     <!-- Theme style  -->
     <link rel="stylesheet" href="{{asset('storage/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('storage/css/question.css')}}">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <!-- Modernizr JS -->
     <script src="{{asset('storage/js/modernizr-2.6.2.min.js')}}"></script>
     <!-- FOR IE9 below -->
@@ -159,6 +161,7 @@
 <script src="{{asset('storage/js/jquery.waypoints.min.js')}}"></script>
 <!-- Flexslider -->
 <script src="{{asset('storage/js/jquery.flexslider-min.js')}}"></script>
+{{--<script src="{{asset('storage/js/question.js')}}"></script>--}}
 
 
 <!-- MAIN JS -->

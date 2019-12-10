@@ -7,6 +7,7 @@ use App\Http\Requests\QuestionRequest;
 use App\Http\Services\AnswerServiceInterface;
 use App\Http\Services\CategoryServiceInterface;
 use App\Http\Services\QuestionServiceInterface;
+use App\Question;
 
 class
 QuestionController extends Controller
